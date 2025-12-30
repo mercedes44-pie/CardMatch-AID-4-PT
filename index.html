@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>天天記牌</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13c8ec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#101f22",
+                        "surface-dark": "#162629",
+                        "surface-border": "#283639",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "Noto Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .card-base {
+                @apply relative flex items-center justify-center rounded-lg border-2 border-white/20 shadow-lg transition-all hover:scale-105 active:scale-95;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15), inset 0 0 0 2px rgba(255,255,255,0.1);
+            }
+            .card-green { background: linear-gradient(135deg, #7ad900 0%, #6ab600 100%); border-color: #5da000; }
+            .card-magenta { background: linear-gradient(135deg, #e600e6 0%, #cc00cc 100%); border-color: #ff66ff; }
+            .card-yellow { background: linear-gradient(135deg, #ffcc00 0%, #ffbb00 100%); border-color: #ffe066; }
+            .card-red { background: linear-gradient(135deg, #ff0044 0%, #e60033 100%); border-color: #ff6688; }
+            .card-purple { background: linear-gradient(135deg, #8800ff 0%, #7700e6 100%); border-color: #aa66ff; }
+            .card-orange { background: linear-gradient(135deg, #ff8800 0%, #ff7700 100%); border-color: #ffaa44; }
+            .card-pink-grad { background: linear-gradient(135deg, #ff66b2 0%, #ffcc99 100%); border-color: #ffccdd; }
+            .card-blue-grad { background: linear-gradient(135deg, #ff66cc 0%, #66ffff 100%); border-color: #ccffff; }
+            .card-rainbow { background: linear-gradient(135deg, #ff3399 0%, #ffcc00 50%, #33ccff 100%); border-color: #ffffff; }
+            .bg-card-7 { background: linear-gradient(to bottom right, #f64f9f, #fce0a2); }
+            .bg-card-8 { background: linear-gradient(to bottom right, #f45c9f, #7df6ea); }
+            .bg-card-9 { background: linear-gradient(to bottom right, #f142c3, #6cf0db); }
+            
+            .card-icon {
+                @apply text-white drop-shadow-md select-none pointer-events-none;
+                font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;
+                font-size: 32px;
+            }
+            
+            .scrollbar-hide::-webkit-scrollbar { display: none; }
+            .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        }
+        
+        body {
+            @apply bg-background-dark text-white font-display overflow-hidden selection:bg-primary selection:text-black;
+            min-height: 100dvh;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
